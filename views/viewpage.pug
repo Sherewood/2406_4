@@ -1,0 +1,16 @@
+p press back to go back
+h1 This is #{send.person}'s homepage
+if (send.purchased==0)
+	p #{send.person} has not placed any orders
+ul
+	each val, index in send.purchased 
+		div Restuarnat name: #{val.restaurantName}
+		div Purchased by: #{val.name}
+		each num, index in val.order
+			div #{num.quantity} orders of #{num.name} 
+		div subtotal: #{val.subtotal} $
+		div tax: #{val.tax} $
+		div delivery fee: #{val.fee} $
+		div total cost: #{val.total} $
+			
+		</br>

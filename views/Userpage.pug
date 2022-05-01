@@ -1,0 +1,37 @@
+a(href='view') See users 
+|
+|
+a(href='Home') Home
+|
+|
+a(href='Order') Order
+|
+|
+h1 Welcome #{send.person}
+a(href='Logout') Logout
+if (send.purchased==null)
+	p #{send.person} has not placed any orders
+p HISTORY	
+ul
+	each val, index in send.purchased 
+		div Restuarnat name: #{val.restaurantName}
+		div Purchased by: #{val.name}
+		each num, index in val.order
+			div #{num.quantity} orders of #{num.name} 
+		div subtotal: #{val.subtotal} $
+		div tax: #{val.tax} $
+		div delivery fee: #{val.fee} $
+		div total cost: #{val.total} $
+			
+		</br>
+p Would you like privacy?
+p yes
+input(type='checkbox' checked=false  id="yes")
+p
+p no
+input(type='checkbox' checked=false id="no" )
+p
+p
+button(id='Save') Save
+		
+script(src='/save')

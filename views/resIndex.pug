@@ -1,0 +1,22 @@
+a(href='view') See users 
+|
+|
+a(href='Home') Home
+|
+|
+a(href='Order') Order
+|
+|
+p
+html
+	head
+		title total users
+body Here are the total users
+	br
+	
+	each user in users
+		a(href="users/" + user._id value=user._id) #{user.username}
+		br
+			
+
+
